@@ -12,7 +12,7 @@ function capitalizeFirstLetter() {
     var ignoredWords = [
         "a", "o", "as", "os", "de", "dos", "das", "do", "da",
         "e", "ou", "para", "por", "no", "na", "nos", "nas"
-    ];
+    ].map(word => word.trim());
 
     // Capitaliza a primeira letra de cada palavra, exceto as palavras ignoradas
     for (var i = 0; i < words.length; i++) {
@@ -26,5 +26,33 @@ function capitalizeFirstLetter() {
     var capitalizedText = words.join(' ');
 
     // Define o valor do elemento de saída de texto
-    convertedText.value = capitalizedText;
+    convertedText.textContent = capitalizedText;
+}
+
+function convertToLowerCase() {
+    var textInput = document.getElementById('text-input');
+    var convertedText = document.getElementById('converted-text');
+
+    // Obtém o texto da entrada
+    var inputText = textInput.value;
+
+    // Converte todo o texto para minúsculas
+    var lowercaseText = inputText.toLowerCase();
+
+    // Define o valor do elemento de saída de texto
+    convertedText.textContent = lowercaseText;
+}
+
+function convertToUpperCase() {
+    var textInput = document.getElementById('text-input');
+    var convertedText = document.getElementById('converted-text');
+
+    // Obtém o texto da entrada
+    var inputText = textInput.value;
+
+    // Converte todo o texto para maiúsculas
+    var uppercaseText = inputText.toUpperCase();
+
+    // Define o valor do elemento de saída de texto
+    convertedText.textContent = uppercaseText;
 }
